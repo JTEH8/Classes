@@ -1,15 +1,18 @@
 #include <iostream>
 #include <cstring>
+#include "Music.h"
 
 using namespace std;
 
-class Music(){
- public:
-  Music();
-  Music(char*);
-  char* getDescription();
-  int getYear();
- private:
-  char* description;
-  int year;
+Music::Music(){
+  description = new char[80];
+}
+
+Music::Music(char* newdescription){
+  description = new char[80];
+  strcpy(description, newdescription);
+}
+
+char* Room::getDescription(){
+  return description;
 }
