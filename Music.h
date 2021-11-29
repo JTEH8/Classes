@@ -3,11 +3,13 @@
 
 using namespace std;
 
-class Music {
- public:
+class Music : public Parent {
+public:
   Music();
   Music(char*);
-  char* getDescription();
+  char* getArtist();
+  int getDuration():
  private:
-  char* description;
+  char Publisher[];
+  int duration;
 }

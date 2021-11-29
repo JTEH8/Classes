@@ -5,9 +5,13 @@
 using namespace std;
 
 Music::Music(){
-  description = new char[80];
+  cout << "Adding Music" << endl;
+  Publisher = new char[80];
+  duration = 0;
 }
+char* Music::getArtist(){
 
+}
 Music::Music(char* newdescription){
   description = new char[80];
   strcpy(description, newdescription);
@@ -15,4 +19,5 @@ Music::Music(char* newdescription){
 
 char* Room::getDescription(){
   return description;
+}
 }
