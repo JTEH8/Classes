@@ -10,4 +10,7 @@ class Games : public Parent {
   Games(char* newTitle, int newYear, char* newPublisher, double newRating);
   char* getPublisher();
   double getRating();
+  private;
+  char* Publisher[];
+  double Rating;
 };

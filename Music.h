@@ -5,11 +5,7 @@ using namespace std;
 
 class Music : public Parent {
 public:
-  Music();
-  Music(char*);
+  Music(char* newTitle, int newYear, char* newArtist, int newDuration);
   char* getArtist();
-  int getDuration():
- private:
-  char Publisher[];
-  int duration;
+  int getDuration();
 }

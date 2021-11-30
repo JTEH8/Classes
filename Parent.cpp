@@ -2,4 +2,9 @@
 #include "Parent.h"
 using namespace std;
 
-Parent :: Parent();
+int Parent :: getYear(){
+  return year;
+}
+char* Parent :: getTitle(){
+  return title;
+}

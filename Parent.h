@@ -3,7 +3,7 @@
 
 class Parent {
  public:
-  parent();
+  Parent();
   char* getTitle();
   int getYear();
  private:
