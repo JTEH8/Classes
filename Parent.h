@@ -7,6 +7,6 @@ class Parent {
   char* getTitle();
   int getYear();
  private:
-  char* title[];
-  int year;
+  char* Title[];
+  int Year;
 };

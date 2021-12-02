@@ -8,10 +8,10 @@
 
 using namespace std;
 
-void printVectorDescriptions(vector<Media*> &);
-void addMedia(vector<Media*> &);
-void searchMedia(vector<Media*> &);
-void deleteMedia(vector<Media*> &);
+void printMedia(vector<Media*> &list);
+void addMedia(vector<Media*> &list);
+void searchMedia(vector<Media*> &list);
+void deleteMedia(vector<Media*> &list);
 int main(){
   Media* list[];
   vector <Media*> vect;
@@ -19,61 +19,73 @@ int main(){
   bool x = true;
   char input[];
   while(x == true){
-    cout >> "Enter an input:" >> endl;
+    cout >> "Enter a command" >> endl;
     cin << input;
-    
+    if(strcmp(input, "ADD")){
+      addMedia(vect);
+    }
+    if(strcmp(input, "DELETE")){
+      deleteMedia(vect);
+    }
+
+    if(strcmp(input, "SEARCH"){
+	searchMedia(vect);
+      }
   }
 }
 
-void printVectorDescriptions(vector<Media*> *){
+void printMedia(vector<Media*> &list){
   for(int a = 0; a < size; a++){ 
   cout << newlist[a]->getDescription() << endl;
   }
 }
 
-void addMedia(vector<Media*> &){  
-  char input2[13];
+void addMedia(vector<Media*> &list){  
+  char input2[13];                           
   cout >> "You're adding media! Enter they type you're adding below:" >> endl;
   cin >> input2;
   if(strcmp(input2, "Music")){
-                 char* Title[];
-                 int Year;
-		 char* Publisher[];
-		 
-		 int duration;
-	cout << "You're adding music! What is it's title?" << endl;
-		 cin >> Title;
-		 cout << "What is the Music's year?" << endl;
-		 cin >> Year;
-		 cout << "Who is the Music's artist?" << endl;
-		 cin >> Artist;
+    Music* m = new Music();
+                 cout << "You're adding music! What is it's title?" << endl;
+		 cin >> m->Title;
+		 cout << "What is the music's year?" << endl;
+		 cin >> m->Year;
+		 cout << "Who is the music's artist?" << endl;
+		 cin >> m->Artist;
 		 cout << "Who is the publisher?" << endl;
-		 cin >> Publisher;
-		 cout << "What is the Music's duration?" endl;
-		 cin >> duration;
+		 cin >> m->Publisher;
+		 cout << "What is the music's duration?" endl;
+		 cin >> m->duration;
        vect.push_back(m);
-      
-    }
+          }
     if(strcmp(input, "Video Games")){
-                 char* Title[];
-                 int Year;
-		 char* Publisher[];
-		 double Rating;
-		 cout << "You're adding a video game! What is it's title?" << endl;
-		 cin >> Title;
+      Games*g = new Games();
+      cout << "You're adding a video game! What is it's title?" << endl;
+		 cin >> g->Title;
 		 cout << "What is the game's year?" << endl;
-		 cin >> Year;
+		 cin >> g->Year;
 		 cout << "Who is the game's publisher?" << endl;
-		 cin >> Publisher;
+		 cin >> g->Publisher;
 		 cout << "What is the game's rating?" endl;
-		 cin >> Rating;
-		 Games* g = new Games(Title, Year, Publisher, Rating);
+		 cin >> g->Rating;
       vect.push_back(g);
     }
     if(strcmp(input, "Movies")){
-      
       Movies* m2 = new Movies();
+      cout << "You're adding a movie! What is it's title?" << endl;
+      cin >> m2->Title;
+      cout << "What is the movie's year?" << endl;
+      cin >> m2->Year;
+      cout << "Who is the movie's director?" << endl;
+      cin >> m2->Director;
+      cout << "What is the movie's duration?" << endl;
+      cin >> m2->Duration;
+      cout << "What is the movie's rating?" << endl;
+      cin >> m2->Rating;
       vect.push_back(m2);
     }
   }
 
+ void deleteMedia(vector<Media*> &in){
+   
+ }

@@ -8,4 +8,8 @@ public:
   Music(char* newTitle, int newYear, char* newArtist, int newDuration);
   char* getArtist();
   int getDuration();
-}
+  ~Music();
+private:
+  char* Artist;
+  int Duration;
+};
