@@ -15,7 +15,6 @@ void searchMedia(vector<Media*> &list);
 void deleteMedia(vector<Media*> &list);
 int main(){
   vector <Media*> vect;
-  char* MusicDescription = new char[80];
   bool x = true;
   char input[100];
   while(x == true){
@@ -42,14 +41,11 @@ void addMedia(vector<Media*> &list){
   cout << "You're adding media! Enter they type you're adding below:" << endl;
   cin >> input;
   if(strcmp(input, "Music")){
-    char* musicTitle;
-    musicTitle = new char[100];
+    char musicTitle[100];
     int musicYear = 0;
-    char* musicArtist;
-    musicArtist = new char[100];
+    char musicArtist[100];
     int musicDuration = 0;
-    char* musicPublisher;
-    musicPublisher = new char[100];
+    char musicPublisher[100];
                  cout << "You're adding music! What is it's title?" << endl;
 		 cin >> musicTitle;
 		 cout << "What is the music's year?" << endl;
@@ -64,13 +60,11 @@ void addMedia(vector<Media*> &list){
        list.push_back(m);
           }
     if(strcmp(input, "Video Games")){
-      char* gameTitle;
-      gameTitle = new char[100];
+      char gameTitle[100];
       int gameYear = 0;
-      char* gamePublisher;
-      gamePublisher = new char[100];
+      char gamePublisher[100];
       float gameRating = 0;
-                 cout << "You're adding a video game! What is it's title?" << endl;
+     cout << "You're adding a video game! What is it's title?" << endl;
 		 cin >> gameTitle;
 		 cout << "What is the game's year?" << endl;
 		 cin >> gameYear;
@@ -82,14 +76,12 @@ void addMedia(vector<Media*> &list){
        list.push_back(g);
        }
     if(strcmp(input, "Movies")){
-      char* movieTitle;
-      movieTitle = new char[100];
+    char movieTitle[100];
     int movieYear = 0;
-    char* movieDirector;
-    movieDirector = new char[100];
+    char movieDirector[100];
     int movieDuration = 0;
     float movieRating = 0;
-                 cout << "You're adding a movie! What is it's title?" << endl;
+     cout << "You're adding a movie! What is it's title?" << endl;
 		 cin >> movieTitle;
 		 cout << "What is the movie's year?" << endl;
 		 cin >> movieYear;

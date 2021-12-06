@@ -4,7 +4,7 @@
 #include "Movies.h"
 using namespace std;
 
-Movies::Movies(char newTitle, int newYear, char* newPublisher, float newRating){
+Movies::Movies(char newTitle, int newYear, char newPublisher, float newRating){
   strcpy(Publisher, newPublisher);
   Rating = newRating;
 }
