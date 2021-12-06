@@ -1,16 +1,17 @@
+#ifndef GAMES_H
+#define GAMES_H
 #include <iostream>
 #include <cstring>
-#include "Parent.h"
+#include "Media.h"
 
 using namespace std;
 
-class Games : public Parent {
-  
+class Games : public Media {
+  char* Publisher[100];
+  float Rating = 0;
  public:
-  Games(char* newTitle, int newYear, char* newPublisher, double newRating);
-  char* getPublisher();
-  double getRating();
-  private;
-  char* Publisher[];
-  double Rating;
+  Games(char* newTitle, int newYear, char* newPublisher, float newRating);
+  virtual void print();
 };
+
+#endif
