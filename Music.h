@@ -13,7 +13,7 @@ public:
   char Publisher[100];
   Music(char newTitle, int newYear, char newArtist, int newDuration, char newPublisher);
   virtual void print();
-  ~Music();
+  virtual void ~Music();
 };
 
 #endif 

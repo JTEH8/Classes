@@ -11,3 +11,7 @@ void Media:: print(){
   cout << "Title: " << Title << endl;
   cout << "Year: " << Year << endl;
 }
+
+Media::~Media{
+
+}

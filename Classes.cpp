@@ -63,7 +63,7 @@ void addMedia(vector<Media*> &list){
       char gameTitle[100];
       int gameYear = 0;
       char gamePublisher[100];
-      float gameRating = 0;
+      char gameRating[10];
      cout << "You're adding a video game! What is it's title?" << endl;
 		 cin >> gameTitle;
 		 cout << "What is the game's year?" << endl;
@@ -80,7 +80,7 @@ void addMedia(vector<Media*> &list){
     int movieYear = 0;
     char movieDirector[100];
     int movieDuration = 0;
-    float movieRating = 0;
+    char movieRating[10];
      cout << "You're adding a movie! What is it's title?" << endl;
 		 cin >> movieTitle;
 		 cout << "What is the movie's year?" << endl;
@@ -147,7 +147,7 @@ void addMedia(vector<Media*> &list){
        cout << "Are you sure you want to delete this media? (Y/N)" << endl;
        cin >> input3;
        if(strcmp(input3, "Y") == 0){
-         (*ptr)->delete();
+         delete (*ptr);
        }
      }
    } 
@@ -159,7 +159,12 @@ void addMedia(vector<Media*> &list){
      //If the title is the same as the one entered
      if((*ptr)->Year == input3){
        //Prints the student 
+        cout << "This is what you're deleting: " << endl;
        (*ptr)->print();
+       cout << "Are you sure you want to delete this media? (Y/N)" << endl;
+       cin >> input3;
+       if(strcmp(input3, "Y") == 0){
+         delete[] (*ptr);
      }
    }
    }

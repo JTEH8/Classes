@@ -11,7 +11,7 @@ Music:Music(char newTitle, int newYear, char newArtist, int newDuration, char ne
 }
 
 Music::~Music(){
-  delete[] Music;
+
 }
 
 void Music :: print(){

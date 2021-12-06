@@ -10,9 +10,10 @@ class Movies : public Media {
 public:
   int Duration = 0;
   char Director[100];
-  float Rating = 0;
-  Movies(char newTitle, char newDirector, int newYear, int newDuration, float newRating);
+  char Rating[10];
+  Movies(char newTitle, char newDirector, int newYear, int newDuration, char newRating);
   virtual void print();
+  virtual ~Movies();
 };
 
 #endif

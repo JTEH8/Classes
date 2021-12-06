@@ -4,14 +4,18 @@
 #include "Games.h"
 using namespace std;
 
-Games::Games(char newTitle, int newYear, char newPublisher, float newRating){
+Games::Games(char newTitle, int newYear, char newPublisher, char newRating){
   strcpy(Publisher, newPublisher);
-  Rating = newRating;
+  strcpy(Rating, newRating);
 }
 
 void Games::print(){
   cout << "Title: " << Title << endl;
   cout << "Publisher: " << Publisher << endl;
   cout << "Year: " << Year << endl;
-  cout << "Rating: " << setprecision(2) << Rating << endl;
+  cout << "Rating: " << Rating << endl;
+}
+
+Games::~Games{
+
 }

@@ -9,6 +9,7 @@ public:
   int Year = 0;
   Media(char newTitle, int Year);
   virtual void print();
+  virtual ~Media(); //Destructor
 };
 
 #endif
