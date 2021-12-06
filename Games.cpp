@@ -1,17 +1,17 @@
 #include <iostream>
+#include <iomanip>
 #include <cstring>
 #include "Games.h"
 using namespace std;
 
-Games::Games(){
-
-}
-
-char* Games::getPublisher(){
+Games::Games(char newTitle, int newYear, char newPublisher, float newRating){
   strcpy(Publisher, newPublisher);
-  return Publisher;
+  Rating = newRating;
 }
 
-double Games::getRating(){
-  return Rating;
+void Games::print(){
+  cout << "Title: " << Title << endl;
+  cout << "Publisher: " << Publisher << endl;
+  cout << "Year: " << Year << endl;
+  cout << "Rating: " << setprecision(2) << Rating << endl;
 }

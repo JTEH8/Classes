@@ -1,15 +1,18 @@
+#ifndef MOVIES_H
+#define MOVIES_H
 #include <iostream>
 #include <cstring>
-#include "Parent.h"
+#include "Media.h"
 
 using namespace std;
 
-class Movies : public Parent {
- public:
-  Movies(char* newTitle, char* newDirector, int newYear, int newDuration, double newRating);
-  char* getDirector();
-  double getRating();
- private:
-  char* Director[];
-  double Rating;
-}
+class Movies : public Media {
+public:
+  int Duration = 0;
+  char* Director[100];
+  float Rating = 0;
+  Movies(char* newTitle, char* newDirector, int newYear, int newDuration, float newRating);
+  virtual void print();
+};
+
+#endif

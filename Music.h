@@ -1,15 +1,19 @@
+#ifndef MUSIC_H
+#define MUSIC_H
 #include <iostream>
 #include <cstring>
+#include "Media.h"
 
 using namespace std;
 
-class Music : public Parent {
+class Music : public Media {
 public:
-  Music(char* newTitle, int newYear, char* newArtist, int newDuration);
-  char* getArtist();
-  int getDuration();
+  char* Artist[100];
+  int Duration = 0;
+  char* Publisher[100];
+  Music(char* newTitle, int newYear, char* newArtist, int newDuration, char* newPublisher);
+  virtual void print();
   ~Music();
-private:
-  char* Artist;
-  int Duration;
 };
+
+#endif 

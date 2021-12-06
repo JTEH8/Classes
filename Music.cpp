@@ -4,16 +4,22 @@
 
 using namespace std;
 
+Music:Music(char newTitle, int newYear, char* newArtist, int newDuration, char* newPublisher){
+  strcpy(Artist, newArtist);
+  Duration = newDuration;
+  strcpy(Publisher, newPublisher);
+}
+
 Music::~Music(){
   delete[] Music;
 }
-int* Music::getDuration(){
-  return Duration;
+
+void Music :: print(){
+  cout << "Title: " << Title << endl;
+  cout << "Artist: " << Artist << endl;
+  cout << "Year: " << Year << endl;
+  cout << "Duration: " << Duration << endl;
+  cout << "Publisher: " << Publisher << endl;
 }
 
-char* Music::getArtist(){
-  return Artist;
-}
 
-
-}
