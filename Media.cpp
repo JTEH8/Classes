@@ -8,6 +8,6 @@ Media::Media(char newTitle, int newYear){
   Year = newYear;
 }
 void Media:: print(){
-  cout << "" << Title << ", ";
-  cout << Year << endl;
+  cout << "Title: " << Title << endl;
+  cout << "Year: " << Year << endl;
 }
