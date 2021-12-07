@@ -127,7 +127,7 @@ void addMedia(vector<Media*> &list){
      }
    }
    }
-   
+   p
  }
  void deleteMedia(vector<Media*> &list){
  char input[100];
