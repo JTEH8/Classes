@@ -35,7 +35,7 @@ int main(){
 void printMedia(vector<Media*> &list){
   vector<Media*>:: iterator printer;
   for(printer = (list).begin(); printer < list.end(); printer++){
-  printer->print();
+  (*printer)->print();
   }
 }
 
@@ -129,7 +129,7 @@ void addMedia(vector<Media*> &list){
    }
    
  }
- void deleteMedia(vector<Media*> &in){
+ void deleteMedia(vector<Media*> &list){
  char input[100];
  char input2[100];
  char input3[100];
