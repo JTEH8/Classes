@@ -4,7 +4,7 @@
 
 using namespace std;
 
-Music:Music(char newTitle, int newYear, char newArtist, int newDuration, char newPublisher){
+Music:Music(char* newTitle, int newYear, char* newArtist, int newDuration, char* newPublisher){
   strcpy(Artist, newArtist);
   Duration = newDuration;
   strcpy(Publisher, newPublisher);

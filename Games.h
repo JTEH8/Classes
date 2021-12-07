@@ -8,9 +8,9 @@ using namespace std;
 
 class Games : public Media {
   public:
-  char Publisher[100];
-  char Rating[10];
-  Games(char newTitle, int newYear, char newPublisher, char newRating);
+  char* Publisher[100];
+  char* Rating[10];
+  Games(char* newTitle, int newYear, char* newPublisher, char* newRating);
   virtual void print();
   virtual ~Games();
 };

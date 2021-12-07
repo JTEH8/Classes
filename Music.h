@@ -8,12 +8,12 @@ using namespace std;
 
 class Music : public Media {
 public:
-  char Artist[100];
+  char* Artist[100];
   int Duration = 0;
-  char Publisher[100];
-  Music(char newTitle, int newYear, char newArtist, int newDuration, char newPublisher);
+  char* Publisher[100];
+  Music(char* newTitle, int newYear, char* newArtist, int newDuration, char* newPublisher);
   virtual void print();
-  virtual void ~Music();
+  virtual ~Music();
 };
 
 #endif 

@@ -4,7 +4,7 @@
 #include "Games.h"
 using namespace std;
 
-Games::Games(char newTitle, int newYear, char newPublisher, char newRating){
+Games::Games(char* newTitle, int newYear, char* newPublisher, char* newRating){
   strcpy(Publisher, newPublisher);
   strcpy(Rating, newRating);
 }

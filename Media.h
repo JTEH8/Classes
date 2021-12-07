@@ -5,9 +5,9 @@
 
 class Media {
 public:
-  char Title[100];
+  char* Title[100];
   int Year = 0;
-  Media(char newTitle, int Year);
+  Media(char* newTitle, int Year);
   virtual void print();
   virtual ~Media(); //Destructor
 };

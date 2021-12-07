@@ -3,7 +3,7 @@
 #include "Media.h"
 using namespace std;
 
-Media::Media(char newTitle, int newYear){
+Media::Media(char* newTitle, int newYear){
   strcpy(Title, newTitle);
   Year = newYear;
 }
