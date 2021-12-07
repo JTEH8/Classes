@@ -12,6 +12,12 @@ void Media:: print(){
   cout << "Year: " << Year << endl;
 }
 
+/*
+char* Media::getTitle(){
+return Title;
+}
+*/
+
 Media::~Media{
 
 }
