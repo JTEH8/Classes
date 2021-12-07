@@ -5,12 +5,15 @@
 
 class Media {
 public:
-  char* Title[100];
-  int Year = 0;
-  Media(char* newTitle, int Year);
- // char* getTitle();
+ 
+  Media(char* newTitle, int newYear);
+  char* getTitle();
   virtual void print();
-  virtual ~Media(); //Destructor
+  int getYear();
+  ~Media(); //Destructor
+  protected:
+   char Title;
+  int Year = 0;
 };
 
 #endif
