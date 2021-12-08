@@ -21,6 +21,6 @@ int Media::getYear() {
 }
 
 
-Media::~Media{
+Media::~Media(){
 
 }

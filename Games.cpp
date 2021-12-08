@@ -4,7 +4,7 @@
 #include "Games.h"
 using namespace std;
 
-Games::Games(char* newTitle, int newYear, char* newPublisher, char* newRating){
+Games::Games(char* newTitle, int newYear, char* newPublisher, char* newRating): Media(newTitle, newYear){
   strcpy(Publisher, newPublisher);
   strcpy(Rating, newRating);
 }
@@ -16,6 +16,6 @@ void Games::print(){
   cout << "Rating: " << Rating << endl;
 }
 
-Games::~Games{
+Games::~Games(){
 
 }

@@ -11,7 +11,7 @@ public:
   int getYear();
   ~Media(); //Destructor
   protected:
-   char Title;
+   char Title[100];
   int Year = 0;
 };
 
