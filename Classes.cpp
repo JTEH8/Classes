@@ -36,7 +36,10 @@ int main(){
 }
 
 void printMedia(vector<Media*> &list){
-  cout << "Hello!" << endl;
+  vector<Media*>:: iterator printer;
+  for(printer = (list).begin(); printer < list.end(); printer++){
+  (*printer)->print();
+  }
 }
 
 void addMedia(vector<Media*> &list){  
@@ -111,7 +114,7 @@ void addMedia(vector<Media*> &list){
      cin >> input2;
      for(ptr = (list).begin(); ptr < list.end(); ptr++){
      //If the title is the same as the one entered
-     if(strcmp((*ptr)->Title, input2) == 0){
+     if(strcmp((*ptr)->getTitle(), input2) == 0){
        //Prints the student 
        (*ptr)->print();
      }
@@ -122,20 +125,19 @@ void addMedia(vector<Media*> &list){
      cin >> input3;
      for(ptr = (list).begin(); ptr < list.end(); ptr++){
      //If the title is the same as the one entered
-     if((*ptr)->Year == input3){
+     if((*ptr)->getYear() == input3){
        //Prints the student 
        (*ptr)->print();
      }
    }
    }
-   
  }
  void deleteMedia(vector<Media*> &list){
  char input[100];
  char* input2;
  input2 = new char[100];
  char input3[100];
- char input4[100];
+ int input4 = 0;
 
  vector<Media*>:: iterator ptr2;
  cout << "Do you want to delete by title or year?" << endl;
@@ -145,7 +147,11 @@ void addMedia(vector<Media*> &list){
      cin >> input2;
      for(ptr2 = (list).begin(); ptr2 < list.end(); ptr2++){
      //If the title is the same as the one entered
+<<<<<<< HEAD
      if(strcmp((*ptr2)->Title, input2) == 0){
+=======
+     if(strcmp((*ptr2)->getTitle(), input2) == 0){
+>>>>>>> ff6546f38d419ed538325ec5013e28af16d52091
        //Deletes the student 
        cout << "This is what you're deleting: " << endl;
        (*ptr2)->print();
@@ -159,19 +165,34 @@ void addMedia(vector<Media*> &list){
    }
    if((strcmp(input, "Year") == 0) || (strcmp(input, "year") == 0)){
      cout << "Enter the year of the media: " << endl;
+<<<<<<< HEAD
      cin >> input3;
      for(ptr2 = (list).begin(); ptr2 < list.end(); ptr2++){
      //If the title is the same as the one entered
      if((*ptr2)->Year == input3){
+=======
+     cin >> input4;
+     for(ptr2 = (list).begin(); ptr2 < list.end(); ptr2++){
+     //If the Year is the same as the one entered
+     if((*ptr2)->getYear() == input4){
+>>>>>>> ff6546f38d419ed538325ec5013e28af16d52091
        //Prints the student 
         cout << "This is what you're deleting: " << endl;
        (*ptr2)->print();
        cout << "Are you sure you want to delete this media? (Y/N)" << endl;
        cin >> input3;
        if(strcmp(input3, "Y") == 0){
+<<<<<<< HEAD
          delete (*ptr2);
+=======
+         delete[] (*ptr2);
+>>>>>>> ff6546f38d419ed538325ec5013e28af16d52091
      }
    }
    }
  }
+<<<<<<< HEAD
  }
+=======
+ }
+>>>>>>> ff6546f38d419ed538325ec5013e28af16d52091

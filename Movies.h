@@ -13,7 +13,7 @@ public:
   char Rating[10];
   Movies(char* newTitle, char* newDirector, int newYear, int newDuration, char* newRating);
   virtual void print();
-  virtual ~Movies();
+  ~Movies();
 };
 
 #endif
