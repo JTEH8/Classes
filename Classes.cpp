@@ -8,49 +8,59 @@
 #include <vector>
 
 using namespace std;
-
+//Prototyping functions
 void printMedia(vector<Media*> &list);
 void addMedia(vector<Media*> &list);
 void searchMedia(vector<Media*> &list);
 void deleteMedia(vector<Media*> &list);
+//Main Method
 int main(){
+  //Media Vector
   vector <Media*> vect;
   bool x = true;
   char input[100];
   cout << "Enter a command" << endl;
+  //Loop that runs while program is active.
   while(x == true){
+    //Reads in input for commands 
     cin.getline(input,100, '\n');
+    //If user enters "ADD"
     if(strcmp(input, "ADD") == 0){
       strcpy(input, "Empty");
       addMedia(vect);
     }
+    //If input is "DELETE"
     else if(strcmp(input, "DELETE") == 0){
       deleteMedia(vect);
     }
+    //If input is "PRINT"
     else if(strcmp(input, "PRINT") == 0){
       printMedia(vect);
     }
+    //If input is "SEARCH"
     else if(strcmp(input, "SEARCH") == 0){
        searchMedia(vect);
       }
+    //If input is "QUIT"
     else if(strcmp(input, "QUIT") == 0){
       x = false;
       break;
     }
   }
 }
-
+//Print Media
 void printMedia(vector<Media*> &list){
   vector<Media*>:: iterator printer;
   for(printer = (list).begin(); printer < list.end(); printer++){
   (*printer)->print();
   }
 }
-
+//Add Media
 void addMedia(vector<Media*> &list){  
-  cout << "You're adding media! Enter they type you're adding below:" << endl;
+  cout << "You're adding media! Enter the type you're adding below:" << endl;
   char input4[100];
   cin.getline(input4, 100, '\n');
+  //If the user enters Music
   if(strcmp(input4, "Music") == 0){
     char musicTitle[100];
     int musicYear = 0;
@@ -72,6 +82,7 @@ void addMedia(vector<Media*> &list){
 		 Music* m = new Music(musicTitle, musicYear, musicArtist, musicDuration, musicPublisher);
        list.push_back(m);
           }
+  //If the user enters "Video Games"
   if(strcmp(input4, "Video Games") == 0){
       char gamePublisher[100];
       char gameTitle[100];
@@ -90,6 +101,7 @@ void addMedia(vector<Media*> &list){
 		 Games* g = new Games(gameTitle, gameYear, gamePublisher, gameRating);
        list.push_back(g);
        }
+    //If the user enters "Movies"
     if(strcmp(input4, "Movies") == 0){
       char movieDirector[100];
       char movieTitle[100];
@@ -113,6 +125,7 @@ void addMedia(vector<Media*> &list){
        list.push_back(m2);    
     }
   }
+//Search Media 
  void searchMedia(vector<Media*> &list){
    char input[100];
    char* input2;
@@ -121,17 +134,19 @@ void addMedia(vector<Media*> &list){
    vector<Media*>::iterator ptr;
    cout << "Do you want to search by title or by year?" << endl;
    cin >> input;
+   //Search by title
    if((strcmp(input, "title") == 0) || (strcmp(input, "Title") == 0)){
-     cout << "Enter the title of the media: " << endl;
-     cin.getline(input2,100, '\n');
+     cout << "Enter the title of the media: " << endl;   
      for(ptr = (list).begin(); ptr < list.end(); ptr++){
      //If the title is the same as the one entered
+      cin.getline(input2, 100, '\n');
      if(strcmp((*ptr)->getTitle(), input2) == 0){
        //Prints the student 
        (*ptr)->print();
      }
    } 
    }
+   //Search by Year
    if((strcmp(input, "Year") == 0) || (strcmp(input, "year") == 0)){
      cout << "Enter the year of the media: " << endl;
      cin >> input3;
@@ -146,7 +161,8 @@ void addMedia(vector<Media*> &list){
  }
  void deleteMedia(vector<Media*> &list){
  char input[100];
- char input2[100];
+ char* input2;
+ input2 = new char[100];
  char input3[100];
  int input4 = 0;
 
@@ -155,35 +171,39 @@ void addMedia(vector<Media*> &list){
  cin >> input;
     if((strcmp(input, "title") == 0) || (strcmp(input, "Title") == 0)){
      cout << "Enter the title of the media: " << endl;
-     cin.getline(input2,100, '\n');
      for(ptr2 = (list).begin(); ptr2 < list.end(); ptr2++){
+      //Enters a title
+     cin.getline(input2,100, '\n');
      //If the title is the same as the one entered
      if(strcmp((*ptr2)->getTitle(), input2) == 0){
-       //Deletes the student 
+       //Checks if you're sure
        cout << "This is what you're deleting: " << endl;
        (*ptr2)->print();
        cout << "Are you sure you want to delete this media? (Y/N)" << endl;
        cin >> input3;
-       cin.ignore(100m '\n');
+       cin.ignore(100, '\n');
        if(strcmp(input3, "Y") == 0){
-         delete (*ptr2);
+         //Erasing a student
+         list.erase(ptr2);
        }
      }
    } 
    }
+   //Deleting by Year
    if((strcmp(input, "Year") == 0) || (strcmp(input, "year") == 0)){
      cout << "Enter the year of the media: " << endl;
      cin >> input4;
      for(ptr2 = (list).begin(); ptr2 < list.end(); ptr2++){
      //If the Year is the same as the one entered
      if((*ptr2)->getYear() == input4){
-       //Prints the student 
+       //Checks if you're sure
         cout << "This is what you're deleting: " << endl;
        (*ptr2)->print();
        cout << "Are you sure you want to delete this media? (Y/N)" << endl;
        cin >> input3;
        if(strcmp(input3, "Y") == 0){
-         delete (*ptr2);
+         //Deletes the student
+         list.erase(ptr2);
      }
    }
    }
