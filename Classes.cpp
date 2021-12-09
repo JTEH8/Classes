@@ -1,3 +1,9 @@
+/*
+This is a program that allows you to create a media database of Music, Video Games, and Movies.
+Author: Jeffrey Teh
+Date Completed: 12/8/2021
+Thanks to Ehan M, Jayden H, Nihal P, Nathan Z, and Ruby A for help with this project!
+*/
 #include <iostream>
 #include <cstring>
 #include <cctype>
